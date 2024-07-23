@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addition App</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            align-items: center;
+            font-size: 30px;
+        }
+
+
+        .container{
+            height: fit-content;
+            width: fit-content;
+            background-color: pink;
+            display: flex;
+            flex-direction: column;
+            padding: 50px;
+            row-gap: 10px;
+            align-items: center;
+            border-radius:20px ;
+        }
+
+
+        #num1{
+            font-size: 20px;
+        }
+
+        #num2{
+            font-size: 20px;
+        }
+        #btn{
+            font-size: 20px;
+            background-color: gray;
+        }
+    </style>
+
+    <script>
+        function add(){
+        event.preventDefault();
+        let num1=document.getElementById("num1");
+        let num2=document.getElementById("num2");
+        let msg=document.getElementById("msg");
+
+        if(num1===""){
+            alert("Enter number");
+            msg.innerHTML="";
+            return;
+        }
+
+        if(num2===""){
+            alert("Enter number");
+            msg.innerHTML="";
+            return;
+        }
+
+        n1=parseFloat(num1.value);
+        n2=parseFloat(num2.value);
+
+        ans=n1+n2;
+
+        msg.innerHTML="Addition of Numbers==>"+ans;
+        }
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <div>Addition App</div>
+        <form onsubmit="add()">
+            <input type="number" placeholder="Enter First Number" id="num1" class="ip" ><br><br>
+            <input type="number" placeholder="Enter Second Number" id="num2" class="ip"><br><br>
+            <input type="submit" id="btn"></button>
+        </form>
+
+        <div id="msg"></div>
+    </div>
+</body>
+</html>
